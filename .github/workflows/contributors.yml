@@ -18,8 +18,8 @@ jobs:
         run: node index.js
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_OWNER: ${{ github.repository.owner }}
-          GH_REPO: ${{ github.repository.name }}
+          GH_OWNER: ${{ secrets.GH_OWNER }}
+          GH_REPO: ${{ secrets.GH_REPO }}
       - name: "✍️ Update README.md"
         run: |
           git config user.name ${{ secrets.USER_NAME }}
