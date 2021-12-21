@@ -1,7 +1,7 @@
 name: contributors
 on:
   push:
-    branches: [develop]
+    branches: main
   pull_request_target:
     types: [opened]
   pull_request_review_comment:
