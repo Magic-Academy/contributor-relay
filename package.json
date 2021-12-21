@@ -1,0 +1,24 @@
+{
+  "name": "contributor-relay",
+  "version": "1.0.0",
+  "description": "Select this template to create a new repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Magic-Academy/contributor-relay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Magic-Academy/contributor-relay/issues"
+  },
+  "homepage": "https://github.com/Magic-Academy/contributor-relay#readme",
+  "dependencies": {
+    "@octokit/core": "^3.5.1",
+    "dotenv": "^10.0.0"
+  }
+}

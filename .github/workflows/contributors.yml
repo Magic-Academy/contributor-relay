@@ -1,0 +1,32 @@
+name: contributors
+on:
+  push:
+    branches: [develop]
+  pull_request_target:
+    types: [opened]
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: "🐱‍💻 Install NPM dependencies"
+        run: npm install
+      - name: "🚀 Run code"
+        run: node index.js
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_OWNER: ${{ github.repository.owner }}
+          GH_REPO: ${{ github.repository.name }}
+      - name: "✍️ Update README.md"
+        run: |
+          git config user.name ${{ secrets.USER_NAME }}
+          git config user.email ${{ secrets.USER_EMAIL }}
+          git add .
+          git commit -m "📈 Update Contributors"
+      - name: "🚀 push"
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
